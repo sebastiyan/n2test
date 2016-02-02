@@ -1,0 +1,29 @@
+[
+	{
+		"id": 1,
+		"subjectId": "",
+		"topic": "Модульна контрольна №1",
+		"lectorId": "",
+		"groupIds": [
+			"", ""
+		]
+	},
+	{
+		"id": 1,
+		"subjectId": "",
+		"topic": "Модульна контрольна №2",
+		"lectorId": "",
+		"groupIds": [
+			"", ""
+		]
+	},
+	{
+		"id": 1,
+		"subjectId": "",
+		"topic": "Модуль 1",
+		"lectorId": "",
+		"groupIds": [
+			"", ""
+		]
+	}
+]
