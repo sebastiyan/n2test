@@ -1,4 +1,9 @@
 <template name="questionPage">
 	<h2>Question Page</h2>
 	{{name}}
+	<div>
+	{{#each answers}}
+		<button>{{this}}</button>
+	{{/each}}
+	</div>
 </template>
