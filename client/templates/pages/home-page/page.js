@@ -1,4 +1,2 @@
 Template.homePage.events({})
-Template.homePage.helpers({
-	
-})
+Template.homePage.helpers({})

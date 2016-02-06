@@ -1,9 +1,11 @@
 <template name="questionPage">
-	<h2>Question Page</h2>
-	{{name}}
-	<div>
-	{{#each answers}}
-		<button>{{this}}</button>
-	{{/each}}
-	</div>
+    <div class="container">
+        <h2>Question Page</h2>
+        <h3>{{name}}</h3>
+        <div>
+        {{#each answers}}
+            <button class="btn btn-primary reply">{{this}}</button>
+        {{/each}}
+        </div>
+    </div>
 </template>

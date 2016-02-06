@@ -6,11 +6,11 @@ Template.questionCreate.events({
     },
 
     // get index of radio button right answer
-    "change input": function(e){
+    "change input.right-answer": function(e){
         rightAnswerChecked = $(e.target).parent().parent().index();
     },
 
-    "submit form": function(e){
+    "submit form.question-create": function(e){
         var $form = $(e.target);
 
         // save question with answers to the database

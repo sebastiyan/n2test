@@ -1,4 +1,2 @@
 Template.nav.events({})
-Template.nav.helpers({
-	
-})
+Template.nav.helpers({})
