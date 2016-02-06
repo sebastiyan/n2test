@@ -1,22 +1,37 @@
+var rightAnswerChecked;
+
 Template.questionCreate.events({
-	"blur textarea": function(e){
-		$(e.target).val($(e.target).val().trim())
-	},
+    "blur textarea": function(e){
+        $(e.target).val($(e.target).val().trim())
+    },
 
-	"submit form": function(e){
-		var $form = $(e.target);
+    // get index of radio button right answer
+    "change input": function(e){
+        rightAnswerChecked = $(e.target).parent().parent().index();
+    },
 
-		Questions.insert({
-			"name": $form.find(".question-name").val().trim(),
-			"answers": [
-			$form.find(".answer-1").val().trim(),
-			$form.find(".answer-2").val().trim(),
-			$form.find(".answer-3").val().trim(),
-			$form.find(".answer-4").val().trim()
-		]
-		})
-		e.preventDefault();
-		return false;
-	}
+    "submit form": function(e){
+        var $form = $(e.target);
+
+        // save question with answers to the database
+        var questionId = Questions.insert({
+            "name": $form.find(".question-name").val().trim(),
+            "answers": [
+            $form.find(".answer-1").val().trim(),
+            $form.find(".answer-2").val().trim(),
+            $form.find(".answer-3").val().trim(),
+            $form.find(".answer-4").val().trim()
+        ]
+        });
+
+        // save right answer to the database
+        RightAnswers.insert({
+            "index": rightAnswerChecked,
+            "questionId": questionId
+        });
+
+        e.preventDefault();
+        return false;
+    }
 })
 Template.questionCreate.helpers({})

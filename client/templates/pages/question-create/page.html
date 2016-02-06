@@ -1,29 +1,51 @@
 <template name="questionCreate">
-	<div class="container">
-		<h2>Question Create</h2>	
-		<form>
-			<div class="form-group">
-				<label for="Question">Вопрос</label>
-				<textarea name="Question" class="form-control question-name" rows="3" required></textarea>
-			</div>
-			<h4>Варианты ответов</h4>
-			<div class="form-group">
-				<label for="Answer-1">Ответ 1</label>
-				<textarea name="Answer-1" class="form-control answer-1" rows="1" required></textarea>
-			</div>			
-			<div class="form-group">
-				<label for="Answer-2">Ответ 2</label>
-				<textarea name="Answer-2" class="form-control answer-2" rows="1" required></textarea>
-			</div>			
-			<div class="form-group">
-				<label for="Answer-3">Ответ 3</label>
-				<textarea name="Answer-3" class="form-control answer-3" rows="1" required></textarea>
-			</div>			
-			<div class="form-group">
-				<label for="Answer-4">Ответ 4</label>
-				<textarea name="Answer-4" class="form-control answer-4" rows="1" required></textarea>
-			</div>
-			<button type="submit" class="btn btn-default">Submit</button>
-		</form>
-	</div>
+    <div class="container">
+        <h2>Question Create</h2>    
+        <form>
+            <div class="form-group">
+                <label for="Question">Вопрос</label>
+                <textarea name="Question" class="form-control question-name" rows="3" required></textarea>
+            </div>
+            <h4>Варианты ответов</h4>
+            <div class="answers">
+                <div class="row form-group">
+                    <div class="col-md-10">
+                        <label for="Answer-1">Ответ 1</label>
+                        <textarea name="Answer-1" class="form-control answer-1" rows="1" required></textarea>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="radio" name="right-answer" required>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-md-10">
+                        <label for="Answer-2">Ответ 2</label>
+                        <textarea name="Answer-2" class="form-control answer-2" rows="1" required></textarea>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="radio" name="right-answer" required>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-md-10">
+                        <label for="Answer-3">Ответ 3</label>
+                        <textarea name="Answer-3" class="form-control answer-3" rows="1" required></textarea>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="radio" name="right-answer" required>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-md-10">
+                        <label for="Answer-4">Ответ 4</label>
+                        <textarea name="Answer-4" class="form-control answer-4" rows="1" required></textarea>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="radio" name="right-answer" required>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+    </div>
 </template>
