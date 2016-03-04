@@ -21,7 +21,8 @@ Template.questionCreate.events({
             $form.find(".answer-2").val().trim(),
             $form.find(".answer-3").val().trim(),
             $form.find(".answer-4").val().trim()
-        ]
+            ],
+            "testId": this._id
         });
 
         // save right answer to the database
@@ -30,8 +31,14 @@ Template.questionCreate.events({
             "questionId": questionId
         });
 
+        document.location.reload(true);
+
         e.preventDefault();
         return false;
+    },
+
+    "click .end-creation":function(e){
+        Router.go("/");
     }
 })
 Template.questionCreate.helpers({})

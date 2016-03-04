@@ -1,18 +1,18 @@
 <template name="testCreate">
     <div class="container">
         <h2>Test Create</h2>
-        <form>
+        <form class="test-create">
             <div class="form-group">
                 <label for="test-name">Название теста</label>
                 <textarea name="test-name" class="form-control test-name" required></textarea>
             </div>
             <h4>Выберите предмет</h4>
-            <select>
+            <select class="subject">
                 {{#each subjects}}
                 <option>{{name}}</option>
                 {{/each}}
             </select>
-            <button type="submit" class="btn btn-default">Добавить вопросы</button>
+            <input type="button" class="btn btn-default add-questions" value="Добавить вопросы">
         </form>
     </div>
 </template>

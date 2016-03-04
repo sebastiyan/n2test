@@ -3,14 +3,20 @@
         <h2>Question Create</h2>    
         <form class="question-create">
             <div class="form-group">
-                <label for="Question">Вопрос</label>
+                <h4>Вопрос</h4>
                 <textarea name="Question" class="form-control question-name" rows="3" required></textarea>
             </div>
-            <h4>Варианты ответов</h4>
+            <div class="row">
+                <div class="col-md-10">
+                    <h4>Варианты ответов</h4>
+                </div>
+                <div class="col-md-2">
+                    <h4>Правильный ответ</h4>
+                </div>
+            </div>
             <div class="answers">
                 <div class="row form-group">
                     <div class="col-md-10">
-                        <label for="Answer-1">Ответ 1</label>
                         <textarea name="Answer-1" class="form-control answer-1" rows="1" required></textarea>
                     </div>
                     <div class="col-md-2">
@@ -19,7 +25,6 @@
                 </div>
                 <div class="row form-group">
                     <div class="col-md-10">
-                        <label for="Answer-2">Ответ 2</label>
                         <textarea name="Answer-2" class="form-control answer-2" rows="1" required></textarea>
                     </div>
                     <div class="col-md-2">
@@ -28,7 +33,6 @@
                 </div>
                 <div class="row form-group">
                     <div class="col-md-10">
-                        <label for="Answer-3">Ответ 3</label>
                         <textarea name="Answer-3" class="form-control answer-3" rows="1" required></textarea>
                     </div>
                     <div class="col-md-2">
@@ -37,7 +41,6 @@
                 </div>
                 <div class="row form-group">
                     <div class="col-md-10">
-                        <label for="Answer-4">Ответ 4</label>
                         <textarea name="Answer-4" class="form-control answer-4" rows="1" required></textarea>
                     </div>
                     <div class="col-md-2">
@@ -45,7 +48,8 @@
                     </div>
                 </div>
             </div>
-            <button type="submit" class="btn btn-default">Submit</button>
+            <button type="submit" class="btn btn-default">Сохранить и Создать еще один вопрос</button>
+            <input type="button" class="btn btn-default end-creation" value="Завершить создание теста">
         </form>
     </div>
 </template>
