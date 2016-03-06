@@ -9,7 +9,7 @@
             <h4>Выберите предмет</h4>
             <select class="subject">
                 {{#each subjects}}
-                <option>{{name}}</option>
+                <option value="{{this._id}}">{{name}}</option>
                 {{/each}}
             </select>
             <input type="button" class="btn btn-default add-questions" value="Добавить вопросы">
