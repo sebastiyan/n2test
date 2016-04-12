@@ -3,15 +3,17 @@
         <h2>Пройти тест</h2>
         <form class="form_pass_test">
         {{#each questions}}
-            <div class="question">
+            <div class="question" data-question="{{_id}}">
                 <h4>{{name}}</h4>
-                {{#each answers}}
-                <div class="radio question__radio">
-                    <label>
-                      <input type="radio" name="options"> {{this}}
-                    </label>
+                <div class="question_answers">
+                    {{#each answers}}
+                    <div class="radio question__radio">
+                        <label>
+                          <input type="radio" name="{{../_id}}"> {{this}}
+                        </label>
+                    </div>
+                    {{/each}}
                 </div>
-                {{/each}}
             </div>
         {{/each}}
         <button type="submit" class="btn btn-default">Submit</button>
