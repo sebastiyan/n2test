@@ -14,7 +14,8 @@ Template.testPass.events({
         });
 
         e.preventDefault();
-        return false;
+
+        Router.go('testResult', {_id: this._id});
     }
 })
 Template.testPass.helpers({
