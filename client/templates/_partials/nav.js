@@ -1,2 +1,6 @@
 Template.nav.events({})
-Template.nav.helpers({})
+Template.nav.helpers({
+    myProfileLink: function() {
+        return "/profile/" + Meteor.userId()
+    }
+})
