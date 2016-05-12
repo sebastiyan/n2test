@@ -1,20 +1,41 @@
 <template name="register">
     <div class="container">
-        <h2>Register</h2>
-        <form class="register">
-            <p>Email: <input type="email" name="email"></p>
-            <p>Password: <input type="password" name="password"></p>
+        <h2>Реєстрація нового користувача</h2>
+        <form class="registration-form">
+            <div class="form-group">
+                <label for="surname">Прізвище</label>
+                <input type="text" class="form-control" id="surname" placeholder="Сидоров" required>
+            </div>
 
-            <!-- добавить функционал для ролей -->
-<!--             <div class="form-group">
-              <label for="selectRoles">Select type of account:</label>
-              <select class="form-control" id="selectRoles">
-                <option>Студент</option>
-                <option>Викладач</option>
-              </select>
-            </div> -->
+            <div class="form-group">
+                <label for="name">Ім'я</label>
+                <input type="text" class="form-control" id="name" placeholder="Іван" required>
+            </div>
 
-            <p><input type="submit" value="Register"></p>
+            <div class="form-group">
+                <label for="patronymic">По-батькові</label>
+                <input type="text" class="form-control" id="patronymic" placeholder="Іванович" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="E-mail" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Пароль</label>
+                <input type="password" class="form-control" id="password" placeholder="Password" required>
+            </div>
+
+            <div class="form-group form-roles">
+              <label for="selectRoles">Оберіть тип аккаунта:</label>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default btn-role" value="lector">Викладач</button>
+                    <button type="button" class="btn btn-default btn-role" value="student">Студент</button>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-default">Submit</button>
         </form>
     </div>
 </template>
