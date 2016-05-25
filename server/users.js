@@ -1,6 +1,8 @@
-Meteor.methods({
+
+  Meteor.startup(function () {
+    Meteor.methods({
     'createUserWithRole': function (formdata) {
-        Accounts.createUser({
+        var userId = Accounts.createUser({
             profile: {
                 surname: formdata.surname,
                 name: formdata.name,
@@ -10,6 +12,7 @@ Meteor.methods({
             password: formdata.password
             
         });
-        Roles.addUsersToRoles( Meteor.userId(), [ formdata.roles ] );
+        Roles.addUsersToRoles( userId, [ formdata.roles ] );
     }
+})
 })
