@@ -18,13 +18,26 @@
                 <!-- <li><a href="{{pathFor 'groupList'}}">Список групп</a></li> -->
                 <!-- <li><a href="{{pathFor 'studentList'}}">Список студентов</a></li> -->
                 <!-- <li><a href="{{pathFor 'subjectList'}}">Список предметов</a></li> -->
-                <li><a href="{{pathFor 'testList'}}">Список тестов</a></li>
+                
                 <!-- <li><a href="{{pathFor 'questionList'}}">Список вопросов</a></li> -->
                 <!-- <li><a href="{{pathFor 'questionCreate'}}">Создать вопрос</a></li> -->
-                <li><a href="{{pathFor 'subjectCreate'}}">Создать предмет</a></li>
-                <li><a href="{{pathFor 'testCreate'}}">Создать тест</a></li>
-                <li><a href="{{myProfileLink}}">Мій профіль</a></li>
-                <li><a href="{{pathFor 'register'}}">Реєстрація</a></li>
+                {{#if currentUser}}
+                    <li><a href="{{myProfileLink}}">Мій профіль</a></li>
+                    {{#if isInRole 'lector'}}
+                        <li><a href="{{pathFor 'subjectCreate'}}">Створити предмет</a></li>
+                        <li><a href="{{pathFor 'testCreate'}}">Створити тест</a></li>
+                    {{else}}
+                        <li><a href="{{pathFor 'testList'}}">Список тестов</a></li>
+                    {{/if}}
+                {{/if}}
+
+                {{#if currentUser}}
+                    <li><a href="#" class="logout">Logout</a></li>
+                {{/if}}
+                {{#unless currentUser}}
+                    <li><a href="{{pathFor 'register'}}">Реєстрація</a></li>
+                    <li><a href="{{pathFor 'login'}}">Увійти</a></li>
+                {{/unless}}
             </ul>
         </div><!-- /.navbar-collapse -->
         <!-- <ul class="nav pull-right">

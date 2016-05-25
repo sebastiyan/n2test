@@ -27,15 +27,17 @@
                 <input type="password" class="form-control" id="password" placeholder="Password" required>
             </div>
 
-            <div class="form-group form-roles">
-              <label for="selectRoles">Оберіть тип аккаунта:</label>
-                <div class="btn-group" role="group">
-                    <button type="button" class="btn btn-default btn-role" value="lector">Викладач</button>
-                    <button type="button" class="btn btn-default btn-role" value="student">Студент</button>
-                </div>
+            <div class="form-roles">
+                <h3>Оберіть тип аккаунта:</h3>
+                <label class="radio-inline">
+                    <input type="radio" name="typeAccount" id="typeLector" value="lector"> Викладач
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="typeAccount" id="typeStudent" value="student"> Студент
+                </label>
             </div>
 
-            <button type="submit" class="btn btn-default">Submit</button>
+            <input type="submit" class="btn btn-default" value="Submit">
         </form>
     </div>
 </template>
