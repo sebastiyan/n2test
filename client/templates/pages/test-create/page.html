@@ -1,18 +1,21 @@
 <template name="testCreate">
     <div class="container">
-        <h2>Test Create</h2>
+        <h2>Створити тест</h2>
         <form class="test-create">
-            <div class="form-group">
-                <label for="test-name">Название теста</label>
-                <textarea name="test-name" class="form-control test-name" required></textarea>
+            <div class="input-field col s12">
+              <input id="test-name" name="test-name" type="text" required>
+              <label for="test-name">Назва Тесту</label>
             </div>
-            <h4>Выберите предмет</h4>
-            <select class="subject">
+            <h4>Оберіть Предмет</h4>
+            <div>
                 {{#each subjects}}
-                <option value="{{this._id}}">{{name}}</option>
+                <p>
+                    <input name="{{this._id}}" type="radio" id="{{this._id}}" value="{{this._id}}" class="subject" />
+                    <label for="{{this._id}}">{{name}}</label>
+                </p>
                 {{/each}}
-            </select>
-            <input type="button" class="btn btn-default add-questions" value="Добавить вопросы">
+            </div>
+            <button type="submit" class="waves-effect waves-light btn">Додати Запитання</button>
         </form>
     </div>
 </template>

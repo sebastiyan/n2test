@@ -18,7 +18,6 @@ ecmascript              # Enable ECMAScript2015+ syntax in app code
 
 autopublish             # Publish all data to the clients (for prototyping)
 insecure                # Allow all DB writes from clients (for prototyping)
-twbs:bootstrap
 msavin:mongol
 iron:router
 aslagle:reactive-table
@@ -26,3 +25,7 @@ reactive-var
 accounts-ui
 accounts-password
 alanning:roles
+materialize:materialize
+juliancwirko:s-alert
+juliancwirko:s-alert-jelly
+planettraining:material-design-icons

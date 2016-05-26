@@ -15,7 +15,7 @@ Template.questionCreate.events({
 
         // save question with answers to the database
         var questionId = Questions.insert({
-            "name": $form.find(".question-name").val().trim(),
+            "name": $form.find("#question-name").val().trim(),
             "answers": [
             $form.find(".answer-1").val().trim(),
             $form.find(".answer-2").val().trim(),

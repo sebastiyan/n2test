@@ -12,7 +12,7 @@ Template.subjectCreate.events({
     "submit form": function(e){
 
         Subjects.insert({
-            "name": $(".subject-name").val().trim(),
+            "name": $("#subject-name").val().trim(),
             "groupIds": selectedGroups,
             "creatorId": Meteor.userId()
         })

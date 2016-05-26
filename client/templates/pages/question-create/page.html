@@ -1,11 +1,11 @@
 <template name="questionCreate">
     <div class="container">
-        <h2>Question Create</h2>    
         <form class="question-create">
-            <div class="form-group">
-                <h4>Вопрос</h4>
-                <textarea name="Question" class="form-control question-name" rows="3" required></textarea>
+            <div class="input-field col s12">
+                <textarea id="question-name" class="materialize-textarea" required></textarea>
+                <label for="question-name">Додайте Текст Запитання</label>
             </div>
+
             <div class="row">
                 <div class="col-md-10">
                     <h4>Варианты ответов</h4>
@@ -48,8 +48,8 @@
                     </div>
                 </div>
             </div>
-            <button type="submit" class="btn btn-default">Сохранить и Создать еще один вопрос</button>
-            <input type="button" class="btn btn-default end-creation" value="Завершить создание теста">
+            <button type="submit" class="waves-effect waves-light btn">Зберегти і Додати Ще Одне Запитання</button>
+            <input type="button" class="waves-effect waves-light btn end-creation" value="Закінчити Створення Тесту">
         </form>
     </div>
 </template>

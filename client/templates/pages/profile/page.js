@@ -28,14 +28,14 @@ Template.profile.helpers({
                     key: "_id",
                     label: "",
                     fn: function (value, object) {
-                        return new Spacebars.SafeString('<a href="/results/'+value+'">Подивитися результати</a>')
+                        return new Spacebars.SafeString('<a href="/results/'+value+'" class="waves-effect waves-light btn">Подивитися результати</a>')
                     }
                 },
                 {
                     key: "",
                     label: "",
                     fn: function (value, object) {
-                        return new Spacebars.SafeString('<a href="/">Видалити</a>')
+                        return new Spacebars.SafeString('<a href="/" class="waves-effect waves-light btn">Видалити</a>')
                     }
                 }
             ]

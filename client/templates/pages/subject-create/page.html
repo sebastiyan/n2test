@@ -1,18 +1,19 @@
 <template name="subjectCreate">
-	<div class="container">
-		<h2>Subject Create</h2>	
-		<form>
-			<div class="form-group">
-				<label for="subject">Название предмета</label>
-				<textarea name="subject" class="form-control subject-name" required></textarea>
-			</div>
-			<h4>Выберите группы</h4>
-			<ul>
-				{{#each groups}}
-				<li><input type="checkbox">{{name}}</li>
-				{{/each}}
-			</ul>
-			<button type="submit" class="btn btn-default">Submit</button>
-		</form>
-	</div>
+    <div class="container">
+        <h2>Додати Новий Предмет</h2> 
+        <form>
+            <div class="input-field">
+                <textarea name="subject" id="subject-name" class="materialize-textarea" required></textarea>
+                <label for="subject">Назва Предмету</label>
+            </div>
+            <h4>Оберіть групи</h4>
+            {{#each groups}}
+            <p>
+                <input type="checkbox" id="{{_id}}"/>
+                <label for="{{_id}}">{{name}}</label>
+            </p>
+            {{/each}}
+            <button type="submit" class="waves-effect waves-light btn">Додати</button>
+        </form>
+    </div>
 </template>

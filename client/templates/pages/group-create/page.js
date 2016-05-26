@@ -2,10 +2,10 @@ Template.groupCreate.events({
     "submit form": function(e){
 
         Groups.insert({
-            "name": $(".group-name").val().trim()
+            "name": $("#group").val().trim()
         })
 
-        $("textarea").val("");
+        $("input").val("");
 
         e.preventDefault();
         return false;
