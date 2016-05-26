@@ -5,7 +5,16 @@ Template.profile.helpers({
     // userSurname: function() {
     //     Meteor.users.findOne({_id: Meteor.userId()}).profile.surname;
     // },
-    // profile: function(){
-    //     return this.profile.info;
-    // }
+    name: function(){
+        return Meteor.user().profile.name;
+    },
+    surname: function(){
+        return Meteor.user().profile.surname;
+    },
+    patronymic: function(){
+        return Meteor.user().profile.patronymic;
+    },
+    email: function(){
+        return Meteor.user().emails[0].address;
+    }
 })
