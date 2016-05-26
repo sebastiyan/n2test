@@ -2,9 +2,15 @@
     <div class="container">
         <h2>Увійти</h2>
         <form class="login">
-            <p>Email: <input type="email" name="email"></p>
-            <p>Пароль: <input type="password" name="password"></p>
-            <p><input type="submit" value="Login"></p>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" placeholder="E-mail" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Пароль</label>
+                <input type="password" class="form-control" placeholder="Password" name="password" required>
+            </div>
+            <p><input type="submit" class="btn btn-default" value="Увійти"></p>
         </form>
     </div>
 </template>

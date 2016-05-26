@@ -3,7 +3,8 @@ Template.testCreate.events({
         // save test to the database
         var testId = Tests.insert({
             "name": $(".test-name").val().trim(),
-            "subjectId": $(".subject > option:checked").val()
+            "subjectId": $(".subject > option:checked").val(),
+            "creatorId": Meteor.userId()
         });
 
         Router.go('/question-create/' + testId);

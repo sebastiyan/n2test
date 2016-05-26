@@ -8,7 +8,7 @@ Template.login.events({
             if(error){
                 console.log(error.reason);
             } else {
-                console.log(4)
+                console.log("Вхід успішний")
             }
         });
     }
