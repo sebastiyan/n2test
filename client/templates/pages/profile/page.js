@@ -1,10 +1,4 @@
 Template.profile.helpers({
-    // userName: function() {
-    //     Meteor.users.findOne({_id: Meteor.userId()}).profile.name;
-    // },
-    // userSurname: function() {
-    //     Meteor.users.findOne({_id: Meteor.userId()}).profile.surname;
-    // },
     name: function(){
         return Meteor.user().profile.name;
     },
@@ -16,5 +10,35 @@ Template.profile.helpers({
     },
     email: function(){
         return Meteor.user().emails[0].address;
+    },
+
+    testsSettings: function () {
+        return {
+            id: "tests",
+            collection: Tests.find({"creatorId": Meteor.userId()}),
+            showNavigationRowsPerPage: false,
+            showNavigation: 'auto',
+            showFilter: false,
+            fields: [
+                {
+                    key: "name",
+                    label: "Назва"
+                },
+                {
+                    key: "_id",
+                    label: "",
+                    fn: function (value, object) {
+                        return new Spacebars.SafeString('<a href="/results/'+value+'">Подивитися результати</a>')
+                    }
+                },
+                {
+                    key: "",
+                    label: "",
+                    fn: function (value, object) {
+                        return new Spacebars.SafeString('<a href="/">Видалити</a>')
+                    }
+                }
+            ]
+        };
     }
 })
