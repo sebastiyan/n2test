@@ -1,16 +1,16 @@
 <template name="testCreate">
     <div class="container">
-        <h2>Створити тест</h2>
+        <h4>Створити тест</h4>
         <form class="test-create">
             <div class="input-field col s12">
               <input id="test-name" name="test-name" type="text" required>
               <label for="test-name">Назва Тесту</label>
             </div>
-            <h4>Оберіть Предмет</h4>
+            <h5>Оберіть Предмет</h5>
             <div>
                 {{#each subjects}}
                 <p>
-                    <input name="{{this._id}}" type="radio" id="{{this._id}}" value="{{this._id}}" class="subject" />
+                    <input name="subjects" type="radio" id="{{this._id}}" value="{{this._id}}" class="subject" />
                     <label for="{{this._id}}">{{name}}</label>
                 </p>
                 {{/each}}
