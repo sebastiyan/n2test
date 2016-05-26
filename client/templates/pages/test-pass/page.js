@@ -1,13 +1,12 @@
-Meteor.currentUserId = "u9SusLuhBak7GTKw9";
-
 Template.testPass.events({
     "submit .form_pass_test": function(e){
+
         var $form = $(e.target);
 
         // save user answers into db
         $(".question").each( function(){
             UserAnswers.insert({
-                "userId": Meteor.currentUserId,
+                "userId": Meteor.userId(),
                 "questionId": $(this).data("question"),
                 "index": $(this).find("input:checked").parents(".radio").index()
             });
