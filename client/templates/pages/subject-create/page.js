@@ -10,7 +10,6 @@ Template.subjectCreate.events({
     },
 
     "submit form": function(e){
-
         Subjects.insert({
             "name": $("#subject-name").val().trim(),
             "groupIds": selectedGroups,
@@ -20,7 +19,8 @@ Template.subjectCreate.events({
         $("textarea").val("");
         $("input").attr("checked", false);
 
-        selectedGroups = []
+        selectedGroups = [];
+        sAlert.info('Ви успішно створили новий предмет');
         e.preventDefault();
         return false;
     }

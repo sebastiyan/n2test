@@ -1,12 +1,12 @@
 <template name="subjectCreate">
     <div class="container">
-        <h2>Додати Новий Предмет</h2> 
+        <h4>Додати Новий Предмет</h4>
         <form>
             <div class="input-field">
                 <textarea name="subject" id="subject-name" class="materialize-textarea" required></textarea>
                 <label for="subject">Назва Предмету</label>
             </div>
-            <h4>Оберіть групи</h4>
+            <h5>Оберіть групи</h5>
             {{#each groups}}
             <p>
                 <input type="checkbox" id="{{_id}}"/>
