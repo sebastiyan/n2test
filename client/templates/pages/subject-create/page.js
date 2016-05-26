@@ -20,6 +20,7 @@ Template.subjectCreate.events({
         $("textarea").val("");
         $("input").attr("checked", false);
 
+        selectedGroups = []
         e.preventDefault();
         return false;
     }
