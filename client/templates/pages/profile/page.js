@@ -40,5 +40,27 @@ Template.profile.helpers({
                 }
             ]
         };
+    },
+    subjectsSettings: function () {
+        return {
+            id: "subjects",
+            collection: Subjects.find({"creatorId": Meteor.userId()}),
+            showNavigationRowsPerPage: false,
+            showNavigation: 'auto',
+            showFilter: false,
+            fields: [
+                {
+                    key: "name",
+                    label: "Назва"
+                },
+                {
+                    key: "",
+                    label: "",
+                    fn: function (value, object) {
+                        return new Spacebars.SafeString('<a href="/" class="waves-effect waves-light btn">Видалити</a>')
+                    }
+                }
+            ]
+        };
     }
 })

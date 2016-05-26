@@ -28,11 +28,20 @@
                 </div>
             </div>
         </div>
+        {{#if isInRole 'lector'}}
         <div class="personal-tests">
-            <h5>Створені тести</h5>
+            <h5>Створені Тести</h5>
             <div>
                 {{> reactiveTable settings=testsSettings}}
             </div>
         </div>
+
+        <div class="personal-subjects">
+            <h5>Ваші Предмети</h5>
+            <div>
+                {{> reactiveTable settings=subjectsSettings}}
+            </div>
+        </div>
+        {{/if}}
     </div>
 </template>
