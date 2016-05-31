@@ -31,13 +31,9 @@ Template.profile.helpers({
                         return new Spacebars.SafeString('<a href="/results/'+value+'" class="waves-effect waves-light btn">Подивитися результати</a>')
                     }
                 },
-                {
-                    key: "",
-                    label: "",
-                    fn: function (value, object) {
-                        return new Spacebars.SafeString('<a href="/" class="waves-effect waves-light btn">Видалити</a>')
-                    }
-                }
+                {key: '', headerClass: "actions", cellClass: "actions", label: '', sortable: false, fn: function(value, object){
+                    return new Spacebars.SafeString('<a href="/" class="waves-effect waves-light btn remove-test">Видалити</a>');
+                }}
             ]
         };
     },
@@ -62,5 +58,14 @@ Template.profile.helpers({
                 }
             ]
         };
+    }
+})
+
+
+Template.profile.events({
+    "click #tests tr": function(e){
+        if ($(e.target).hasClass("remove-test")) {
+            console.log(this._id)
+        }
     }
 })
