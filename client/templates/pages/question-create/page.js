@@ -11,6 +11,7 @@ Template.questionCreate.events({
     },
 
     "submit form.question-create": function(e){
+        sAlert.success('Ви успішно додали нове запитання');
         var $form = $(e.target);
 
         // save question with answers to the database
@@ -31,7 +32,8 @@ Template.questionCreate.events({
             "questionId": questionId
         });
 
-        document.location.reload(true);
+        $(".right-answer").val("");
+        $("textarea").val("");
 
         e.preventDefault();
         return false;

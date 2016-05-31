@@ -1,52 +1,69 @@
 <template name="questionCreate">
     <div class="container">
         <form class="question-create">
-            <div class="input-field col s12">
+            <div class="input-field">
                 <textarea id="question-name" class="materialize-textarea" required></textarea>
                 <label for="question-name">Додайте Текст Запитання</label>
             </div>
 
             <div class="row">
-                <div class="col-md-10">
-                    <h4>Варианты ответов</h4>
+                <div class="col s10">
+                    <h6>Додайте Варіанти Відповідей</h6>
                 </div>
-                <div class="col-md-2">
-                    <h4>Правильный ответ</h4>
+                <div class="col s2">
+                    <h6>Відмітьте Правильну Відповідь</h6>
                 </div>
             </div>
             <div class="answers">
                 <div class="row form-group">
-                    <div class="col-md-10">
-                        <textarea name="Answer-1" class="form-control answer-1" rows="1" required></textarea>
+                    <div class="col s10">
+                        <div class="input-field">
+                            <textarea name="answer-1" id="answer-1" class="materialize-textarea answer-1" required></textarea>
+                            <label for="answer-1">Додайте Текст Запитання</label>
+                        </div>
                     </div>
-                    <div class="col-md-2">
-                        <input type="radio" class="right-answer" name="right-answer" required>
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <div class="col-md-10">
-                        <textarea name="Answer-2" class="form-control answer-2" rows="1" required></textarea>
-                    </div>
-                    <div class="col-md-2">
-                        <input type="radio" class="right-answer" name="right-answer" required>
+                    <div class="col s2">
+                        <input name="right-answer" type="radio" class="right-answer" id="right-answer-1"/>
+                        <label for="right-answer-1"></label>
                     </div>
                 </div>
                 <div class="row form-group">
-                    <div class="col-md-10">
-                        <textarea name="Answer-3" class="form-control answer-3" rows="1" required></textarea>
+                    <div class="col s10">
+                        <div class="input-field">
+                            <textarea name="answer-2" id="answer-2" class="materialize-textarea answer-2" required></textarea>
+                            <label for="answer-2">Додайте Текст Варіанта Відповіді</label>
+                        </div>
                     </div>
-                    <div class="col-md-2">
-                        <input type="radio" class="right-answer" name="right-answer" required>
+                    <div class="col s2">
+                        <input name="right-answer" type="radio" class="right-answer" id="right-answer-2"/>
+                        <label for="right-answer-2"></label>
                     </div>
                 </div>
                 <div class="row form-group">
-                    <div class="col-md-10">
-                        <textarea name="Answer-4" class="form-control answer-4" rows="1" required></textarea>
+                    <div class="col s10">
+                        <div class="input-field">
+                            <textarea name="answer-3" id="answer-3" class="materialize-textarea answer-3" required></textarea>
+                            <label for="answer-3">Додайте Текст Варіанта Відповіді</label>
+                        </div>
                     </div>
-                    <div class="col-md-2">
-                        <input type="radio" class="right-answer" name="right-answer" required>
+                    <div class="col s2">
+                        <input name="right-answer" type="radio" class="right-answer" id="right-answer-3"/>
+                        <label for="right-answer-3"></label>
                     </div>
                 </div>
+                <div class="row form-group">
+                    <div class="col s10">
+                        <div class="input-field">
+                            <textarea name="answer-" id="answer-4" class="materialize-textarea answer-4" required></textarea>
+                            <label for="answer-4">Додайте Текст Варіанта Відповіді</label>
+                        </div>
+                    </div>
+                    <div class="col s2">
+                        <input name="right-answer" type="radio" class="right-answer" id="right-answer-4"/>
+                        <label for="right-answer-4"></label>
+                    </div>
+                </div>
+                
             </div>
             <button type="submit" class="waves-effect waves-light btn">Зберегти і Додати Ще Одне Запитання</button>
             <input type="button" class="waves-effect waves-light btn end-creation" value="Закінчити Створення Тесту">
