@@ -58,6 +58,36 @@ Template.profile.helpers({
                 }
             ]
         };
+    },
+    studentResultSettings: function () {
+        return {
+            id: "results",
+            collection: Results.find({"userId": Meteor.userId()}),
+            showNavigationRowsPerPage: false,
+            showNavigation: 'auto',
+            showFilter: false,
+            fields: [
+                {
+                    key: 'testId',
+                    label: 'Предмет',
+                    fn: function (value, object) {
+                        var subject = Tests.findOne({ _id: value }).subjectId;
+                        return Subjects.findOne({ _id: subject }).name;
+                    }
+                },
+                {
+                    key: 'testId',
+                    label: 'Тест',
+                    fn: function (value, object) {
+                        return Tests.findOne({ _id: value }).name;
+                    }
+                },
+                {
+                    key: "result",
+                    label: "Результат"
+                }
+            ]
+        };
     }
 })
 
