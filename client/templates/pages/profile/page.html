@@ -28,6 +28,7 @@
                 </div>
             </div>
         </div>
+        <!-- добавить выбор группы для студента -->
         {{#if isInRole 'lector'}}
         <div class="personal-tests">
             <h5>Створені Тести</h5>
@@ -37,11 +38,17 @@
         </div>
 
         <div class="personal-subjects">
-            <h5>Ваші Предмети</h5>
+            <h5>Створені Предмети</h5>
             <div>
                 {{> reactiveTable settings=subjectsSettings}}
             </div>
         </div>
+        {{/if}}
+        {{#if isInRole 'student'}}
+            <!-- Таблица с пройденными тестами и результатом -->
+            <!-- Тест -->
+            <!-- Предмет -->
+            <!-- Результат -->
         {{/if}}
     </div>
 </template>
