@@ -11,7 +11,9 @@ Template.profile.helpers({
     email: function(){
         return Meteor.user().emails[0].address;
     },
-
+    groups: function(){
+        return Groups.find();
+    },
     testsSettings: function () {
         return {
             id: "tests",
@@ -89,13 +91,59 @@ Template.profile.helpers({
             ]
         };
     }
-})
+});
 
+Template.profile.onCreated(function() {
+    this.autorun(function() { 
+        var optionsCursor = Groups.find().count(); 
+        if(optionsCursor > 0){ 
+            $('select').material_select(); 
+        }
+    });
+});
 
 Template.profile.events({
     "click #tests tr": function(e){
         if ($(e.target).hasClass("remove-test")) {
-            console.log(this._id)
+            console.log(this._id);
         }
+    },
+    "submit form": function(e){
+        var $form = $(e.target);
+
+        var name = $("#name").val().trim();
+        var surname = $("#surname").val().trim();
+        var patronymic = $("#patronymic").val().trim();
+        var selectedIndex = $("li.selected").index();
+        var groupId = $("select option").eq(selectedIndex).val();
+
+        // Meteor.users.update({_id: Meteor.userId()}, {$set: {'profile.name': name}});
+        Meteor.users.update({_id: Meteor.userId()}, {$set: {'profile.name': name, 'profile.surname': surname, 'profile.patronymic': patronymic, 'profile.groupId': groupId}});
+
+        $("input").each(function(i,elem) {
+            console.log($(this))
+            $(this).prop('readonly', true);
+            $(this).addClass("readonly");
+        });
+
+        $(".save-profile").hide();
+
+        sAlert.success('Профіль збережено');
+
+        e.preventDefault();
+        return false;
+    },
+    "click .edit-profile": function(e){
+        $("form input").eq(0).focus();
+
+        $("form input").each(function(i,elem) {
+            if ($(this).hasClass("readonly")) {
+                $(this).removeAttr("readonly");
+                $(this).removeClass("readonly");
+            }
+        });
+        $("select").attr('disabled', false);
+
+        $(".save-profile").show();
     }
 })
